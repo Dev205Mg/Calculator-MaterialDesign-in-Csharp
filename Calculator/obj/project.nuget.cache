@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "qXrtQM1DVsSjHu2P7qSOfws8x5dmudsy0sEvLKWrfxJoWscRetF4WMr7zz6q/TH+N326MRdMDwII8Ptu2hZuwg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Yaël\\Documents\\Visual Studio 2019\\Projects\\Calculator\\Calculator\\Calculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yaël\\.nuget\\packages\\materialdesigncolors\\2.1.2\\materialdesigncolors.2.1.2.nupkg.sha512",
+    "C:\\Users\\Yaël\\.nuget\\packages\\materialdesignthemes\\4.8.0\\materialdesignthemes.4.8.0.nupkg.sha512",
+    "C:\\Users\\Yaël\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}

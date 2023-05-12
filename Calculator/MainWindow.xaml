@@ -56,12 +56,11 @@
                         <RowDefinition Height="43*"/>
                         <RowDefinition Height="37*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" FontSize="16" FontFamily="Roboto" FontWeight="Light" Margin="0,10,20,11" FlowDirection="RightToLeft" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="Black">
-                    52222 + 8996 =
+                    <TextBlock x:Name="displayTop" Grid.Row="0" FontSize="16" FontFamily="Roboto" FontWeight="Light" Margin="10,10,20,11" FlowDirection="RightToLeft" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="Black" MaxWidth="256">
                     </TextBlock>
 
-                    <TextBlock Grid.Row="1" Margin="0,0,20,0" FontSize="25" FontFamily="Roboto" HorizontalAlignment="Stretch" VerticalAlignment="Center" FlowDirection="RightToLeft" FontWeight="Bold" Foreground="Black">
-                    123 145 450 8
+                    <TextBlock x:Name="displayBottom" Grid.Row="1" Margin="10,0,20,0" FontSize="25" FontFamily="Roboto" HorizontalAlignment="Stretch" VerticalAlignment="Center" FlowDirection="RightToLeft" FontWeight="Bold" Foreground="Black" MaxWidth="257" ScrollViewer.CanContentScroll="True" Grid.IsSharedSizeScope="True" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                        0
                     </TextBlock>
                 </Grid>
             </materialDesign:Card>
@@ -83,169 +82,171 @@
                     <ColumnDefinition Width="75"/>
                 </Grid.ColumnDefinitions>
                 <!-- btn premiere ligne-->
-                <Button Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnPourcentage" Grid.Column="0" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnPourcentage_Click">
                     <materialDesign:PackIcon Kind="Percent" Height="27" Width="38" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
 
-                <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnClearAll" Grid.Column="1" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
-                    <materialDesign:PackIcon Kind="PlusMinus" Height="27" Width="38" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnClearAll_Click">
+                    <Label FontFamily="Roboto" FontSize="21" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="Black">
+                        CE
+                    </Label>
                 </Button>
 
-                <Button Grid.Column="2" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnClear" Grid.Column="2" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
-                    <Label FontFamily="Roboto" FontSize="21" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnClear_Click">
+                    <Label FontFamily="Roboto" FontSize="21" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="Black">
                         C
                     </Label>
                 </Button>
 
-                <Button Grid.Column="3" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnBackspace" Grid.Column="3" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,0,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnBackspace_Click">
                     <materialDesign:PackIcon Kind="BackspaceOutline" Height="21" Width="32" VerticalAlignment="Center"/>
                 </Button>
                 <!-- btn deuxieme ligne-->
-                <Button Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnRacinecarre" Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnRacinecarre_Click">
                     <materialDesign:PackIcon Kind="SquareRoot" Height="30" Width="38" VerticalAlignment="Center"/>
                 </Button>
 
-                <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnXCarre" Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
-                    <Label FontFamily="Roboto" FontSize="21" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="X²"/>
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnXCarre_Click">
+                    <Label FontFamily="Roboto" FontSize="21" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="X²" Background="{x:Null}" Foreground="Black"/>
                 </Button>
 
-                <Button Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnCarre" Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
-                    <Label FontFamily="Roboto" FontSize="21" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="^"/>
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnCarre_Click">
+                    <Label FontFamily="Roboto" FontSize="21" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="^" Foreground="Black"/>
                 </Button>
 
-                <Button Grid.Column="3" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnDivision" Grid.Column="3" Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,0,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black" Click="btnDivision_Click">
                     <materialDesign:PackIcon Kind="Division" Height="25" Width="35" VerticalAlignment="Center" FontWeight="Light"/>
                 </Button>
                 <!-- btn chiffre 7 8 9 * -->
-                <Button Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn7" Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn7_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         7
                     </Label>
                 </Button>
 
-                <Button Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn8" Grid.Column="1" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn8_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         8
                     </Label>
                 </Button>
 
-                <Button Grid.Column="2" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn9" Grid.Column="2" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn9_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         9
                     </Label>
                 </Button>
 
-                <Button Grid.Column="3" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnMultiple" Grid.Column="3" Grid.Row="2" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,0,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black" Click="btnMultiple_Click">
                     <materialDesign:PackIcon Kind="Multiply" Height="25" Width="35" VerticalAlignment="Center" FontWeight="Light"/>
                 </Button>
                 <!-- btn chiffre 4 5 6 - -->
-                <Button Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn4" Grid.Column="0" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn4_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         4
                     </Label>
                 </Button>
 
-                <Button Grid.Column="1" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn5" Grid.Column="1" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn5_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         5
                     </Label>
                 </Button>
 
-                <Button Grid.Column="2" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn6" Grid.Column="2" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn6_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         6
                     </Label>
                 </Button>
 
-                <Button Grid.Column="3" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnMoins" Grid.Column="3" Grid.Row="3" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,0,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black" Click="btnMoins_Click">
                     <materialDesign:PackIcon Kind="Minus" Height="25" Width="35" VerticalAlignment="Center" FontWeight="Light"/>
                 </Button>
                 <!-- btn chiffre 1 2 3 + -->
-                <Button Grid.Column="0" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn1" Grid.Column="0" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn1_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         1
                     </Label>
                 </Button>
 
-                <Button Grid.Column="1" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn2" Grid.Column="1" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn2_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         2
                     </Label>
                 </Button>
 
-                <Button Grid.Column="2" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn3" Grid.Column="2" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn3_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         3
                     </Label>
                 </Button>
 
-                <Button Grid.Column="3" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnPlus" Grid.Column="3" Grid.Row="4" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,0,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#f2f2f2" BorderBrush="{x:Null}" Foreground="Black" Click="btnPlus_Click">
                     <materialDesign:PackIcon Kind="Plus" Height="25" Width="35" VerticalAlignment="Center" FontWeight="Light"/>
                 </Button>
-                <!-- btn chiffre 1 2 3 + -->
-                <Button Grid.Column="0" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
+                <!-- btn chiffre 00 0 , = -->
+                <Button x:Name="btn0Double" Grid.Column="0" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btn0Double_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         00
                     </Label>
                 </Button>
 
-                <Button Grid.Column="1" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btn0" Grid.Column="1" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#fff" BorderBrush="{x:Null}" Foreground="Black" Click="btn0_Click">
                     <Label FontFamily="Roboto" FontSize="20" FontWeight="Regular" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
                         0
                     </Label>
                 </Button>
 
-                <Button Grid.Column="2" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnVirgule" Grid.Column="2" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,7,5"
-                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black">
+                    materialDesign:ButtonAssist.CornerRadius="8" Background="#FFE5E5E5" BorderBrush="{x:Null}" Foreground="Black" Click="btnVirgule_Click">
                     <materialDesign:PackIcon Kind="Comma" Height="7" Width="34" VerticalAlignment="Center" FontWeight="Light"/>
                 </Button>
 
-                <Button Grid.Column="3" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
+                <Button x:Name="btnEgal" Grid.Column="3" Grid.Row="5" Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="47" Margin="0,0,0,5"
                     materialDesign:ButtonAssist.CornerRadius="8" Background="#17105F" BorderBrush="{x:Null}" Foreground="#fff">
                     <materialDesign:PackIcon Kind="Equal" Height="25" Width="35" VerticalAlignment="Center" FontWeight="Light"/>

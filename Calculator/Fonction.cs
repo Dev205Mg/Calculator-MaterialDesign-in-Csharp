@@ -60,7 +60,7 @@ namespace Calculator
         }
 
         /// <summary>
-        /// Fonction qui teste si la valeur en entrer contien de chaine en entrer
+        /// Fonction qui teste si la valeur en entrer contien de tableau d'operateur en entrer
         /// </summary>
         /// <param name="signes"> tableau de chaine</param>
         /// <param name="content">contenue a tester</param>
@@ -76,6 +76,31 @@ namespace Calculator
             }
 
             return true;
+        }
+        /// <summary>
+        /// Returne la valeur de dernier caractere au chaine d'entrer
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns> char </returns>
+        public static char LastStringValue(string value)
+        {
+            int index = value.Length;
+            return value[index - 1];
+        }
+        /// <summary>
+        /// Fonction qui teste la valeur deu bas et inserer la valeur du haut
+        /// </summary>
+        /// <param name="bottom"></param>
+        /// <param name="top"></param>
+        /// <param name="operateur"></param>
+        public static bool IsContains( string signe, string value)
+        {
+            if (value.Contains(signe))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
